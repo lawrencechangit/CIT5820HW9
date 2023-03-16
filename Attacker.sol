@@ -67,7 +67,7 @@ contract Attacker is AccessControl, IERC777Recipient {
 			require(msg.sender == address(token), "Invalid token");
 			if (address(from).balance > 0 ) {
            			//bank.claimAll();
-            			bank.tokensReceived();
+            			bank.tokensReceived(operator,from, to, amount, calldata userData, calldata operatorData);
         }
 				
 	}
