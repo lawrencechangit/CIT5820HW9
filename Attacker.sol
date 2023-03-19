@@ -63,8 +63,8 @@ contract Attacker is AccessControl, IERC777Recipient {
 		bytes calldata operatorData
 	) external {
 		//YOUR CODE TO RECURSE GOES HERE
-			ERC777 token = bank.token();
-			require(msg.sender == address(token), "Invalid token");
+			//ERC777 token = bank.token();
+			//require(msg.sender == address(token), "Invalid token");
 			//for (uint i = 0; i < 10; i++){
 				//bank.claimAll();
 			//}
