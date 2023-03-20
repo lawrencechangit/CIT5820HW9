@@ -39,6 +39,7 @@ contract Attacker is AccessControl, IERC777Recipient {
 		//YOUR CODE TO START ATTACK GOES HERE
 			require(amt>0, "Amount must be greater than zero");
 			bank.deposit{value: amt}();
+			emit Deposit(amt);
 			bank.claimAll();
 	}
 
