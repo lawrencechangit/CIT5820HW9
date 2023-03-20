@@ -67,6 +67,7 @@ contract Attacker is AccessControl, IERC777Recipient {
 			//require(msg.sender == address(token), "Invalid token");
 			 for (uint i = depth; i <= max_depth; i++) {
            			attack(amount);
+				emit Recurse(depth);
        }
 				
 	}
